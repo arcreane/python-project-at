@@ -23,15 +23,21 @@ class Game:
         pressed = pygame.key.get_pressed()
 
         if pressed[pygame.K_UP]:
-            print("haut")
+            self.player.move_up()
+            self.player.change_animation('up')
         elif pressed[pygame.K_DOWN]:
-            print("bas")
+            self.player.move_down()
+            self.player.change_animation('down')
         elif pressed[pygame.K_LEFT]:
-            print("gauche")
+            self.player.move_left()
+            self.player.change_animation('left')
         elif pressed[pygame.K_RIGHT]:
-            print("droite")
+            self.player.move_right()
+            self.player.change_animation('right')
 
     def run(self):
+
+        clock = pygame.time.Clock()
 
         running = True
 
@@ -46,5 +52,7 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+
+            clock.tick(60)
 
         pygame.quit
