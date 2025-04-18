@@ -16,8 +16,12 @@ class Player(pygame.sprite.Sprite):
             'up': self.get_image(0,96),
 
         }
+        self.feet = pygame.Rect(0,0,self.rect.width * 0.5 , 12)
+        self.old_position = self.position.copy()
         self.speed = 2
     
+    def save_loaction(self): self.old_position = self.position.copy()
+
     def change_animation(self,name): 
         self.image = self.images[name]
         self.image.set_colorkey((0,0,0))
@@ -32,6 +36,12 @@ class Player(pygame.sprite.Sprite):
     
     def update(self):
         self.rect.topleft = self.position
+        self.feet.midbottom = self.rect.midbottom
+    
+    def move_back(self):
+        self.position = self.old_position
+        self.rect.topleft = self.position
+        self.feet.midbottom = self.rect.midbottom
 
     def get_image(self,x,y):
         image = pygame.Surface([32,32])
