@@ -30,12 +30,31 @@ class MapManager:
             Portal(from_world="world", origin_point="enter_house2", target_world="house2", teleport_point="spawn_house"),
             Portal(from_world="world", origin_point="enter_world2", target_world="world2", teleport_point="spawn_house")
         ],npcs=[
-            NPC("paul",nb_points=4),
+            NPC("paul",nb_points=4,dialog =  [
+    "Salut Dima, bienvenue dans la brigade forestière !",
+    "Merci Sacha, ravi d’être ici.",
+    "La forêt est belle mais exigeante. Bonne chance.",
+    "Je ferai de mon mieux !",
+    "Si besoin, viens me voir au poste de guet.",
+    "Compris, je te ferai signe.",
+    "Rapports bizarres à l’hôpital nord.",
+    "Bizarres ? Quel genre ?",
+    "Bruits et lumières la nuit. Reste prudent.",
+    "Je ferai attention. Merci !",
+    "Bonne chance, Dima !"
+]),
         ])
         self.register_map("house",portals=[
             Portal(from_world="house", origin_point="exit_house", target_world="world", teleport_point="enter_house_exit")
         ],npcs=[
-            NPC("robin",nb_points=2)
+            NPC("robin",nb_points=2,dialog=[
+    "Dima, un instant…",
+    "J’ai reçu des rapports étranges.",
+    "Cette ruine est dans notre secteur.",
+    "Inspecte l’hôpital chaque semaine.",
+    "Ne traîne pas, rapporte tout détail.",
+    "Compris ? Mission prioritaire."
+]),
         ])
         self.register_map("house2",portals=[
             Portal(from_world="house2", origin_point="exit_house", target_world="world",teleport_point="exit_house2")
@@ -45,6 +64,12 @@ class MapManager:
         ])
         self.teleport_player("player")
         self.teleport_npcs()
+
+    def check_npc_collisions(self,dialog_box):
+        for sprite in self.get_group().sprites():
+            if sprite.feet.colliderect(self.player.rect) and type(sprite) is NPC:
+                dialog_box.execute(sprite.dialog)
+
 
     def check_collisions(self):
         for portal in self.get_map().portals:
