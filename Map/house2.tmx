@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="25" height="25" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="16">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="25" height="25" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="37">
  <tileset firstgid="1" source="Tiles_VeniaNightmare.tsx"/>
  <tileset firstgid="511" source="Tiles_VeniaIndoor.tsx"/>
  <tileset firstgid="1291" source="Tiles_VeniaNightmare.tsx"/>
@@ -134,5 +134,25 @@
   <object id="13" name="spawn_house" x="161.65" y="312.782">
    <point/>
   </object>
+  <object id="16" type="collision" x="303.371" y="127.327" width="17.1615" height="18.8223"/>
+  <object id="18" type="collision" x="95.2186" y="47.6093" width="191.544" height="49.2701"/>
+  <object id="19" type="collision" x="95.7722" y="79.1643" width="48.7165" height="32.1086"/>
+  <object id="20" type="collision" x="145.596" y="71.9675" width="13.2863" height="29.3406"/>
+  <object id="21" type="collision" x="177.704" y="64.2172" width="13.2863" height="34.8766"/>
+  <object id="22" type="collision" x="240.814" y="66.4316" width="15.5007" height="42.0733"/>
+  <object id="23" type="collision" x="191.544" y="79.7179" width="15.5007" height="32.6622"/>
+  <object id="24" type="collision" x="256.315" y="78.6107" width="29.8942" height="32.1086"/>
+  <object id="25" type="collision" x="192.652" y="214.242" width="29.8942" height="19.3759"/>
+  <object id="26" type="collision" x="255.762" y="218.671" width="32.6622" height="53.6988"/>
+  <object id="27" type="collision" x="63.6636" y="208.152" width="255.762" height="47.0557"/>
+  <object id="28" type="collision" x="305.585" y="228.635" width="12.1791" height="37.091"/>
+  <object id="29" type="collision" x="207.045" y="252.44" width="16.6079" height="19.3759"/>
+  <object id="30" type="collision" x="114.041" y="225.867" width="12.1791" height="40.4125"/>
+  <object id="31" type="collision" x="70.3067" y="224.207" width="18.8223" height="35.9838"/>
+  <object id="32" type="collision" x="287.87" y="304.478" width="19.9295" height="47.0557"/>
+  <object id="33" type="collision" x="334.372" y="303.371" width="16.0543" height="47.0557"/>
+  <object id="34" type="collision" x="192.098" y="286.763" width="31.555" height="23.8046"/>
+  <object id="35" type="collision" x="100.755" y="290.638" width="39.3053" height="27.6798"/>
+  <object id="36" type="collision" x="143.381" y="217.01" width="31.555" height="60.342"/>
  </objectgroup>
 </map>

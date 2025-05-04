@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="25" height="25" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="12">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="25" height="25" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="30">
  <tileset firstgid="1" source="Tiles_VeniaIndoor.tsx"/>
  <tileset firstgid="781" source="Tiles_VeniaNightmare.tsx"/>
  <tileset firstgid="1291" source="Tiles_VeniaOutdoor.tsx"/>
@@ -133,5 +133,22 @@
   <object id="9" type="collision" x="255" y="48.5" width="48" height="61.5"/>
   <object id="10" type="collision" x="304" y="47.5" width="16.5" height="46.5"/>
   <object id="11" type="collision" x="321" y="49" width="15.5" height="64"/>
+ </objectgroup>
+ <objectgroup id="6" name="NPCPaths">
+  <object id="14" name="robin_path1" x="173.333" y="204" width="16" height="16.6667"/>
+  <object id="15" name="robin_path2" x="286.667" y="204" width="16.6667" height="17.3333"/>
+  <object id="16" type="collision" x="65.3333" y="138" width="46.6667" height="21.3333"/>
+  <object id="17" type="collision" x="112" y="128" width="16" height="30.6667"/>
+  <object id="18" type="collision" x="191.333" y="127.333" width="81.3333" height="49.3333"/>
+  <object id="19" type="collision" x="222" y="164.667" width="18.6667" height="27.3333"/>
+  <object id="20" type="collision" x="320" y="175.333" width="15.3333" height="32.6667"/>
+  <object id="21" type="collision" x="63.3333" y="200" width="48" height="38.6667"/>
+  <object id="22" type="collision" x="64.6667" y="225.333" width="31.3333" height="27.3333"/>
+  <object id="23" type="collision" x="191.333" y="303.333" width="33.3333" height="47.3333"/>
+  <object id="24" type="collision" x="160.667" y="242" width="62.6667" height="32"/>
+  <object id="25" type="collisions" x="196" y="233.333" width="28.6667" height="50.6667" visible="0"/>
+  <object id="26" type="collision" x="256" y="245.333" width="15.3333" height="33.3333"/>
+  <object id="27" type="collision" x="287.333" y="254.667" width="49.3333" height="34.6667"/>
+  <object id="29" type="collision" x="194.667" y="230.667" width="29.3333" height="54"/>
  </objectgroup>
 </map>
