@@ -369,9 +369,9 @@
   <object id="160" type="collision" x="374.667" y="76.6667" width="9.33333" height="30"/>
  </objectgroup>
  <objectgroup id="18" name="NPCPaths">
-  <object id="113" name="paul_path1" x="448.333" y="416.333" width="16.3333" height="16.3333"/>
-  <object id="115" name="paul_path2" x="449" y="464.333" width="16.6667" height="15.6667"/>
-  <object id="116" name="paul_path3" x="384" y="463.333" width="17.3333" height="16.3333"/>
-  <object id="117" name="paul_path4" x="384.333" y="416" width="16.6667" height="17"/>
+  <object id="113" name="paul_path1" x="385.667" y="518.333" width="16.3333" height="16.3333"/>
+  <object id="115" name="paul_path2" x="385.667" y="561" width="16.6667" height="15.6667"/>
+  <object id="116" name="paul_path3" x="446" y="560" width="17.3333" height="16.3333"/>
+  <object id="117" name="paul_path4" x="445.667" y="519.333" width="16.6667" height="17"/>
  </objectgroup>
 </map>

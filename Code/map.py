@@ -20,15 +20,16 @@ class Map:
     npcs :list[NPC]
 
 class MapManager:
-    def __init__(self,screen,player):
+    def __init__(self,game,screen,player):
         self.maps = dict()
         self.screen = screen
         self.player = player
+        self.game = game
         self.current_map = "world"
         self.register_map("world",portals=[
             Portal(from_world="world",origin_point="enter_house",target_world="house",teleport_point="spawn_house"),
             Portal(from_world="world", origin_point="enter_house2", target_world="house2", teleport_point="spawn_house"),
-            Portal(from_world="world", origin_point="enter_world2", target_world="world2", teleport_point="spawn_house")
+            Portal(from_world="world", origin_point="enter_world2", target_world="world2", teleport_point="spawn_house"),
         ],npcs=[
             NPC("paul",nb_points=4,dialog =  [
     "Salut Dima, bienvenue dans la brigade forestière !",
@@ -60,7 +61,11 @@ class MapManager:
             Portal(from_world="house2", origin_point="exit_house", target_world="world",teleport_point="exit_house2")
         ])
         self.register_map("world2", portals=[
-            Portal(from_world="world2", origin_point="exit_house", target_world="world", teleport_point="exit_world2")
+            Portal(from_world="world2", origin_point="exit_house", target_world="world", teleport_point="exit_world2"),
+            Portal(from_world="world2", origin_point="enter_house3", target_world="hospital",teleport_point="spawn_house")
+        ])
+        self.register_map("hospital", portals=[
+            Portal(from_world="hospital", origin_point="exit_house", target_world="world2", teleport_point="exit_world3")
         ])
         self.teleport_player("player")
         self.teleport_npcs()
@@ -144,6 +149,8 @@ class MapManager:
     def update(self):
         self.get_group().update()
         self.check_collisions()
+
+        self.game.audio.play_for_map(self.current_map)
 
         for npc in self.get_map().npcs:
             npc.move()
