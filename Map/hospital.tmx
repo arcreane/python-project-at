@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="42">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="43">
  <tileset firstgid="1" source="shop-and-hospital.tsx"/>
  <tileset firstgid="1025" source="Tiles_VeniaIndoor.tsx"/>
+ <tileset firstgid="1805" source="street.tsx"/>
  <layer id="1" name="floor" width="30" height="30">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -40,8 +41,8 @@
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,1210,1210,1210,1210,1210,1210,1210,1210,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,1210,1267,1267,1267,1267,1267,1267,1210,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,1210,1297,1297,1297,1297,1297,1297,1210,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,1210,1327,1327,1327,1327,1327,1327,1210,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,1210,1297,1297,1297,1297,1297,1838,1210,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,1210,1327,1327,1327,1327,1327,1838,1210,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,1210,0,0,0,0,0,0,1210,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,1210,0,0,0,0,0,0,1210,1210,1210,1210,1210,1210,1210,1210,1210,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,1210,0,0,0,0,0,0,1267,1267,1267,1267,1267,1267,1267,1267,1210,0,0,0,
@@ -209,5 +210,6 @@
   <object id="39" type="collision" x="288.725" y="207.375" width="16.0032" height="79.3493"/>
   <object id="40" type="collision" x="260.052" y="366.741" width="55.3445" height="33.3401"/>
   <object id="41" name="computer_zone" type="trigger" x="288.725" y="356.072" width="30.006" height="21.3376"/>
+  <object id="42" name="lock_zone" type="trigger" x="271.388" y="32.6733" width="15.3364" height="38.6745"/>
  </objectgroup>
 </map>

@@ -67,6 +67,7 @@ class MapManager:
         self.register_map("hospital", portals=[
             Portal(from_world="hospital", origin_point="exit_house", target_world="world2", teleport_point="exit_world3")
         ])
+        self.register_map("secret_room")
         self.teleport_player("player")
         self.teleport_npcs()
 
@@ -86,6 +87,17 @@ class MapManager:
                     copy_portal = portal
                     self.current_map = portal.target_world
                     self.teleport_player(copy_portal.teleport_point)
+
+        try:
+            lock_zone = self.get_object("lock_zone")
+            lock_rect = pygame.Rect(lock_zone.x, lock_zone.y, lock_zone.width, lock_zone.height)
+
+            if self.player.feet.colliderect(lock_rect):
+                if not self.game.lockpick_mini.active:
+                    self.game.lockpick_mini.map_manager = self
+                    self.game.lockpick_mini.start()
+        except Exception:
+            pass
 
 
         for sprite in self.get_group().sprites():
@@ -154,3 +166,7 @@ class MapManager:
 
         for npc in self.get_map().npcs:
             npc.move()
+
+        self.game.minigame2.update()
+
+        self.game.minigame2.teleport_to_secret_room(self)

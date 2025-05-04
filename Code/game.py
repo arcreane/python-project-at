@@ -2,10 +2,11 @@ import pygame
 import pytmx
 import pyscroll
 from audio import AudioManager
-from Code.dialog import DialogBox
+from dialog import DialogBox
 from player import Player
 from map import MapManager
-from Code.minigame import CodeMiniGame
+from minigame import CodeMiniGame
+from lockzone import FalloutLockpickMiniGame
 
 class Game:
     def __init__(self):
@@ -22,6 +23,7 @@ class Game:
         self.map_manager = MapManager(self,self.screen,self.player)
         self.dialog_box = DialogBox()
         self.minigame = CodeMiniGame()
+        self.minigame2 = FalloutLockpickMiniGame()
 
     def handle_input(self):
         pressed = pygame.key.get_pressed()
@@ -46,10 +48,14 @@ class Game:
 
         while running:
 
+            if self.minigame2.active:
+                self.minigame2.update()
+
             self.player.save_loaction()
             self.handle_input()
             self.update()
             self.map_manager.draw()
+            self.minigame2.render(self.screen)
 
             if self.minigame.active:
                 self.minigame.update()
@@ -64,16 +70,24 @@ class Game:
                     running = False
 
                 if self.minigame.active:
-                    self.minigame.handle_event(event)  # 👈 ESSENTIEL
+                    self.minigame.handle_event(event)
+                elif self.minigame2.active:
+                    self.minigame2.handle_event(event)
                 else:
                     if event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_SPACE:
                             self.map_manager.check_npc_collisions(self.dialog_box)
                         elif event.key == pygame.K_e:
                             if self.map_manager.current_map == "hospital":
-                                zone = self.map_manager.get_object("computer_zone")
-                                if self.player.feet.colliderect(pygame.Rect(zone.x, zone.y, zone.width, zone.height)):
+                                zone1 = self.map_manager.get_object("computer_zone")
+                                if self.player.feet.colliderect(
+                                        pygame.Rect(zone1.x, zone1.y, zone1.width, zone1.height)):
                                     self.minigame.start()
+
+                                zone2 = self.map_manager.get_object("lock_zone")
+                                if self.player.feet.colliderect(
+                                        pygame.Rect(zone2.x, zone2.y, zone2.width, zone2.height)):
+                                    self.minigame2.start()
 
             clock.tick(60)
 
